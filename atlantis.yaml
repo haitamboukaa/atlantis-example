@@ -1,0 +1,11 @@
+version: 3
+projects:
+  - name: main
+    dir: .
+
+policies:
+  conftest_version: latest
+  policy_sets:
+    - name: terraform-policies
+      path: policy/
+      source: local
