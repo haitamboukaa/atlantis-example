@@ -1,11 +1,10 @@
-terraform {
-  required_providers {
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.0"
-    }
-  }
-}
+resource "null_resource" "example" {}
 
-resource "null_resource" "example" {
+resource "aws_s3_bucket" "tag_test" {
+  bucket = "atlantis-example-tag-test-1234567890"
+
+  tags = {
+    Environment = "dev"
+    # Intentionally missing Project, DeployedBy, GitPath
+  }
 }
