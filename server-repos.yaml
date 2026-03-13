@@ -1,0 +1,31 @@
+## repos lists the config for specific repos.
+repos:
+  # Match all repositories
+  - id: /.*/
+    workflow: custom
+    policy_check: true
+## workflows lists server-side custom workflows
+workflows:
+  custom:
+    plan:
+      steps:
+        - init
+        - plan
+    policy_check:
+      steps:
+        - show  # Show the plan in JSON format
+        - policy_check:
+            extra_args: ["--all-namespaces"]
+    apply:
+      steps:
+        - apply
+
+policies:
+  owners:
+    users:
+      - haitamboukaa
+  conftest_version: latest
+  policy_sets:
+    - name: all
+      path: policy/
+      source: local
