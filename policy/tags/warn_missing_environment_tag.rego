@@ -4,7 +4,7 @@
 package policy.tags
 
 import rego.v1
-import data.policy.lib.tag_utils
+import data.policy.tags.lib.tag_utils
 
 # Required tags with their validation rules
 required_tags := {

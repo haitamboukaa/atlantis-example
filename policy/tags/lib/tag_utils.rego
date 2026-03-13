@@ -1,4 +1,4 @@
-package policy.lib.tag_utils
+package policy.tags.lib.tag_utils
 
 import rego.v1
 
